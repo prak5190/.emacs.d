@@ -1,0 +1,27 @@
+;; Object GenGrammars/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "GenGrammars/"
+  :tables (list 
+   (semanticdb-table "l37-expose-frame-var.ss"
+    :major-mode 'scheme-mode
+    :tags nil
+    :file "l37-expose-frame-var.ss"
+    :pointmax 2788
+    :fsize 2787
+    :lastmodtime '(21804 25438 84326 277000)
+    :unmatched-syntax '((semantic-list 50 . 2787) (semantic-list 50 . 2787))
+    )
+   (semanticdb-table "l38-expose-memory-operands.ss"
+    :major-mode 'scheme-mode
+    :tags nil
+    :file "l38-expose-memory-operands.ss"
+    :pointmax 2924
+    :fsize 2923
+    :lastmodtime '(21801 23629 686222 860000)
+    :unmatched-syntax '((semantic-list 50 . 2923) (semantic-list 50 . 2923) (semantic-list 50 . 2923))
+    )
+   )
+  :file "!home!el!pli!Framework!GenGrammars!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

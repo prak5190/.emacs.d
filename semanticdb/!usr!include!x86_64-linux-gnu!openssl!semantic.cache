@@ -1,0 +1,52 @@
+;; Object openssl/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "openssl/"
+  :tables (list 
+   (semanticdb-table "opensslconf.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("OPENSSL_NO_GMP" variable (:constant-flag t) nil [221 235])
+            ("OPENSSL_NO_IDEA" variable (:constant-flag t) nil [276 291])
+            ("OPENSSL_NO_JPAKE" variable (:constant-flag t) nil [333 349])
+            ("OPENSSL_NO_KRB5" variable (:constant-flag t) nil [390 405])
+            ("OPENSSL_NO_MD2" variable (:constant-flag t) nil [445 459])
+            ("OPENSSL_NO_MDC2" variable (:constant-flag t) nil [500 515])
+            ("OPENSSL_NO_RC5" variable (:constant-flag t) nil [555 569])
+            ("OPENSSL_NO_RFC3779" variable (:constant-flag t) nil [613 631])
+            ("OPENSSL_NO_SCTP" variable (:constant-flag t) nil [672 687])
+            ("OPENSSL_NO_SSL2" variable (:constant-flag t) nil [728 743])
+            ("OPENSSL_NO_STORE" variable (:constant-flag t) nil [785 801])
+            ("OPENSSL_THREADS" variable (:constant-flag t) nil [882 897])
+            ("OPENSSL_NO_STATIC_ENGINE" variable (:constant-flag t) nil [947 971])
+            ("OPENSSL_CPUID_OBJ" variable (:constant-flag t) nil [2113 2130])
+            ("OPENSSL_UNISTD" variable (:constant-flag t) nil [2486 2500]))          
+    :file "opensslconf.h"
+    :pointmax 6608
+    :fsize 6607
+    :lastmodtime '(21770 59469 0 0)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("OPENSSL_NO_KRB5")
+          ("OPENSSL_NO_RFC3779")
+          ("OPENSSL_NO_STATIC_ENGINE")
+          ("OPENSSL_THREADS")
+          ("OPENSSL_NO_MD2")
+          ("OPENSSL_NO_STORE")
+          ("OPENSSL_NO_SSL2")
+          ("OPENSSL_UNISTD" . 
+              ((punctuation "<" 2501 . 2502) (symbol "unistd" 2502 . 2508) (punctuation "." 2508 . 2509) (symbol "h" 2509 . 2510) (punctuation ">" 2510 . 2511)))
+          ("OPENSSL_NO_GMP")
+          ("OPENSSL_NO_MDC2")
+          ("OPENSSL_NO_SCTP")
+          ("OPENSSL_CPUID_OBJ")
+          ("OPENSSL_NO_JPAKE")
+          ("OPENSSL_NO_RC5")
+          ("OPENSSL_NO_IDEA")
+          )
+
+    )
+   )
+  :file "!usr!include!x86_64-linux-gnu!openssl!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

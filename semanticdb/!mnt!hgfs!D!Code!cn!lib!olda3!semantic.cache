@@ -1,0 +1,96 @@
+;; Object olda3/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "olda3/"
+  :tables (list 
+   (semanticdb-table "snippets.cpp"
+    :major-mode 'c++-mode
+    :tags nil
+    :file "snippets.cpp"
+    :pointmax 2228
+    :fsize 2227
+    :lastmodtime '(21784 60490 531340 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "header.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("inttypes.h" include (:system-flag t) nil [1 22])
+            ("common.cpp" include nil nil [23 44])
+            ("string.h" include (:system-flag t) nil [45 64])
+            ("string" include (:system-flag t) nil [65 82])
+            ("__HEADER_CPP__" variable (:constant-flag t) nil [114 128])
+            ("udp_header" type
+               (:members 
+                  ( ("ttl" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [198 211])
+                    ("seq" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [457 470])
+                    ("ack" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [475 488])
+                    ("hash" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [675 689])
+                    ("hasFileInfo" variable (:type "bool") (reparse-symbol classsubparts) [877 894])
+                    ("isRequest" variable (:type "bool") (reparse-symbol classsubparts) [897 912]))                  
+                :type "struct")
+                nil [176 915])
+            ("fileInfo" type
+               (:members 
+                  ( ("filename" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [938 954])
+                    ("size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [957 971]))                  
+                :type "struct")
+                nil [917 974])
+            ("appglobals" type
+               (:members 
+                  ( ("socket" variable (:type "int") (reparse-symbol classsubparts) [998 1009])
+                    ("mut" variable (:type ("pthread_mutex_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1075 1127])
+                    ("cond" variable (:type ("pthread_cond_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1130 1180])
+                    ("window_size" variable (:type "long") (reparse-symbol classsubparts) [1183 1200])
+                    ("recieve_port" variable (:type "int") (reparse-symbol classsubparts) [1203 1220]))                  
+                :type "struct")
+                nil [976 1223])
+            ("func_args" type
+               (:members 
+                  ( ("func" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1294 1305])
+                    ("forw" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1308 1319])
+                    ("app" variable
+                       (:pointer 1
+                        :type ("appglobals" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1322 1338]))                  
+                :type "struct")
+                nil [1273 1341])
+            ("thread_args" type
+               (:members 
+                  ( ("app" variable
+                       (:pointer 1
+                        :type ("appglobals" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1365 1381])
+                    ("port" variable (:type "int") (reparse-symbol classsubparts) [1402 1411]))                  
+                :type "struct")
+                nil [1342 1414])
+            ("app" variable (:type ("appglobals" type (:type "class") nil nil)) nil [1416 1431])
+            ("windowCounter" variable (:type "long") nil [1432 1451]))          
+    :file "header.cpp"
+    :pointmax 1461
+    :fsize 1460
+    :lastmodtime '(21783 36728 131684 700000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("__HEADER_CPP__" . ((number "1" 129 . 130)))
+          )
+
+    )
+   (semanticdb-table "common.cpp"
+    :file "common.cpp"
+    :fsize 536
+    :lastmodtime '(21770 26860 436529 500000)
+    )
+   )
+  :file "!mnt!hgfs!D!Code!cn!lib!olda3!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

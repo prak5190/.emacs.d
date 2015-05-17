@@ -1,0 +1,55 @@
+;; Object depot/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "depot/"
+  :tables
+  (list
+    (semanticdb-table "popupApp.js"
+      :major-mode 'js-mode
+      :tags nil
+      :file "popupApp.js"
+      :pointmax 1068
+      :fsize 1100
+      :lastmodtime '(21767 31409 0 0)
+      :unmatched-syntax '((PAREN_BLOCK 473 . 1066) (DOT 466 . 467) (PAREN_BLOCK 72 . 461)))
+    (semanticdb-table "DepotNewWinGraphController.js"
+      :major-mode 'js-mode
+      :tags 
+        '( ("depotNewWinGraphController" function (:arguments 
+              ( ("$scope" variable nil (reparse-symbol FormalParameterList) [37 43])
+                ("$routeParams" variable nil (reparse-symbol FormalParameterList) [45 57])
+                ("$location" variable nil (reparse-symbol FormalParameterList) [59 68])
+                ("$filter" variable nil (reparse-symbol FormalParameterList) [70 77])
+                ("$rootScope" variable nil (reparse-symbol FormalParameterList) [79 89])
+                ("$modal" variable nil (reparse-symbol FormalParameterList) [90 96])
+                ("UnisService" variable nil (reparse-symbol FormalParameterList) [98 109]))              ) nil [1 3667]))          
+      :file "DepotNewWinGraphController.js"
+      :pointmax 3668
+      :fsize 3781
+      :lastmodtime '(21776 29122 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "DepotController.js"
+      :major-mode 'js-mode
+      :tags 
+        '( ("getRate" function (:arguments 
+              ( ("x" variable nil (reparse-symbol FormalParameterList) [87 88])
+                ("y" variable nil (reparse-symbol FormalParameterList) [89 90])
+                ("oldx" variable nil (reparse-symbol FormalParameterList) [91 95])
+                ("oldy" variable nil (reparse-symbol FormalParameterList) [96 100]))              ) nil [70 431])
+            ("depotController" function (:arguments 
+              ( ("$scope" variable nil (reparse-symbol FormalParameterList) [458 464])
+                ("$routeParams" variable nil (reparse-symbol FormalParameterList) [466 478])
+                ("$location" variable nil (reparse-symbol FormalParameterList) [480 489])
+                ("$filter" variable nil (reparse-symbol FormalParameterList) [491 498])
+                ("$rootScope" variable nil (reparse-symbol FormalParameterList) [500 510])
+                ("UnisService" variable nil (reparse-symbol FormalParameterList) [512 523])
+                ("DepotService" variable nil (reparse-symbol FormalParameterList) [525 537])
+                ("$modal" variable nil (reparse-symbol FormalParameterList) [538 544])
+                ("$window" variable nil (reparse-symbol FormalParameterList) [545 552]))              ) nil [433 6906]))          
+      :file "DepotController.js"
+      :pointmax 6907
+      :fsize 6906
+      :lastmodtime '(21776 46458 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_e!crest!bddlt!peri-js!public!js!depot!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

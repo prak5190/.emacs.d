@@ -1,0 +1,38 @@
+;; Object exnode/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "exnode/"
+  :tables (list 
+   (semanticdb-table "DltFormController.js"
+    :major-mode 'js-mode
+    :tags 
+        '( ("dltFormController" function (:arguments 
+              ( ("$scope" variable nil (reparse-symbol FormalParameterList) [28 34])
+                ("$routeParams" variable nil (reparse-symbol FormalParameterList) [36 48])
+                ("$location" variable nil (reparse-symbol FormalParameterList) [50 59])
+                ("$rootScope" variable nil (reparse-symbol FormalParameterList) [61 71])
+                ("ExnodeService" variable nil (reparse-symbol FormalParameterList) [73 86])
+                ("$log" variable nil (reparse-symbol FormalParameterList) [87 91])
+                ("$filter" variable nil (reparse-symbol FormalParameterList) [92 99])
+                ("SocketService" variable nil (reparse-symbol FormalParameterList) [100 113]))              ) nil [1 5933])
+            ("USGS_KEY_NAME" variable (:default-value "'usgsApiKey'") nil [5935 5968])
+            ("USGS_KEY_TIME" variable (:default-value "'usgsApiKeyTime'") nil [5969 6006])
+            ("shoppingCartController" function (:arguments 
+              ( ("$scope" variable nil (reparse-symbol FormalParameterList) [6039 6045])
+                ("$routeParams" variable nil (reparse-symbol FormalParameterList) [6047 6059])
+                ("$location" variable nil (reparse-symbol FormalParameterList) [6061 6070])
+                ("$rootScope" variable nil (reparse-symbol FormalParameterList) [6072 6082])
+                ("ExnodeService" variable nil (reparse-symbol FormalParameterList) [6084 6097])
+                ("$log" variable nil (reparse-symbol FormalParameterList) [6098 6102])
+                ("$filter" variable nil (reparse-symbol FormalParameterList) [6103 6110])
+                ("SocketService" variable nil (reparse-symbol FormalParameterList) [6111 6124]))              ) nil [6007 8865]))          
+    :file "DltFormController.js"
+    :pointmax 8866
+    :fsize 9181
+    :lastmodtime '(21815 2269 663967 800000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!mnt!hgfs!E!crest!bddlt!peri-js!public!js!exnode!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

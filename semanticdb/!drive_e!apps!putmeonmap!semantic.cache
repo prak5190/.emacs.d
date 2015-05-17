@@ -1,0 +1,24 @@
+;; Object putmeonmap/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "putmeonmap/"
+  :tables
+  (list
+    (semanticdb-table "Gruntfile.js"
+      :major-mode 'js-mode
+      :tags nil
+      :file "Gruntfile.js"
+      :pointmax 629
+      :fsize 657
+      :lastmodtime '(21757 38503 0 0)
+      :unmatched-syntax '((FUNCTION 18 . 26) (PAREN_BLOCK 26 . 33)))
+    (semanticdb-table "app.js"
+      :major-mode 'js-mode
+      :tags nil
+      :file "app.js"
+      :pointmax 1430
+      :fsize 1429
+      :lastmodtime '(21757 14368 0 0)
+      :unmatched-syntax '((VARIABLE 1259 . 1262) (PAREN_BLOCK 1266 . 1404) (IF 993 . 995) (PAREN_BLOCK 996 . 1030) (VARIABLE 811 . 814) (PAREN_BLOCK 818 . 917) (VARIABLE 742 . 745) (PAREN_BLOCK 749 . 766) (VARIABLE 720 . 723) (PAREN_BLOCK 727 . 740) (VARIABLE 662 . 665) (PAREN_BLOCK 669 . 717) (VARIABLE 637 . 640) (PAREN_BLOCK 644 . 660) (VARIABLE 584 . 587) (PAREN_BLOCK 591 . 635) (VARIABLE 556 . 559) (PAREN_BLOCK 563 . 582) (VARIABLE 532 . 535) (PAREN_BLOCK 539 . 554) (VARIABLE 394 . 397) (PAREN_BLOCK 401 . 423) (VARIABLE 345 . 348) (PAREN_BLOCK 352 . 392) (VAR 302 . 305) (PAREN_BLOCK 319 . 321) (VAR 262 . 265) (PAREN_BLOCK 281 . 299) (VAR 222 . 225) (PAREN_BLOCK 242 . 260) (VAR 180 . 183) (PAREN_BLOCK 204 . 219) (VAR 135 . 138) (PAREN_BLOCK 161 . 178) (VAR 103 . 106) (PAREN_BLOCK 123 . 133) (VAR 63 . 66) (PAREN_BLOCK 84 . 101) (VAR 35 . 38) (PAREN_BLOCK 53 . 61) (PAREN_BLOCK 22 . 33))))
+  :file "!drive_e!apps!putmeonmap!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

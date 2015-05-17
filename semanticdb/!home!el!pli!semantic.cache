@@ -1,0 +1,54 @@
+;; Object pli/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pli/"
+  :tables (list 
+   (semanticdb-table "test.ss"
+    :major-mode 'scheme-mode
+    :tags nil
+    :file "test.ss"
+    :pointmax 12296
+    :fsize 12295
+    :lastmodtime '(21833 30006 38886 941000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "test-suite.ss"
+    :major-mode 'scheme-mode
+    :tags nil
+    :file "test-suite.ss"
+    :pointmax 44219
+    :fsize 44218
+    :lastmodtime '(21830 51847 704234 316000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "q.ss"
+    :major-mode 'scheme-mode
+    :tags nil
+    :file "q.ss"
+    :pointmax 115978
+    :fsize 115977
+    :lastmodtime '(21830 26891 572734 749000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "test-case.ss"
+    :major-mode 'scheme-mode
+    :tags nil
+    :file "test-case.ss"
+    :pointmax 130
+    :fsize 129
+    :lastmodtime '(21825 33836 905058 970000)
+    :unmatched-syntax '((semantic-list 1 . 129))
+    )
+   (semanticdb-table "source-grammar.ss"
+    :major-mode 'scheme-mode
+    :tags nil
+    :file "source-grammar.ss"
+    :pointmax 11972
+    :fsize 11971
+    :lastmodtime '(21828 20758 430558 140000)
+    :unmatched-syntax '((semantic-list 1725 . 11971))
+    )
+   )
+  :file "!home!el!pli!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

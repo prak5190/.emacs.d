@@ -1,0 +1,43 @@
+;; Object a3/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "a3/"
+  :tables (list 
+   (semanticdb-table "README.html"
+    :major-mode 'html-mode
+    :tags 
+        '( ("README.html" section nil nil [205 242])
+            ("Reliable UDP" section (:members 
+              ( ("Reliable UDP" section (:members 
+                  ( ("Name : Prakash Rajagopal" section nil nil [273 308])
+                    ("Usage :" section nil nil [308 885])
+                    ("Header structure :" section nil nil [885 1883])
+                    ("Steps :" section nil nil [1883 3774])
+                    ("Adaptive retransmission - Jacobson/Karels algo" section nil nil [3774 4214])
+                    ("Congestion control" section nil nil [4214 4870])
+                    ("Simulate loss and delay" section nil nil [4870 5357])
+                    ("State handling and config" section nil nil [5357 5907]))                  ) nil [250 5907]))              ) nil [242 5907]))          
+    :file "README.html"
+    :pointmax 5907
+    :fsize 5906
+    :lastmodtime '(21788 46805 187162 400000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "Makefile"
+    :major-mode 'makefile-gmake-mode
+    :tags 
+        '( ("all" function nil nil [1 57])
+            ("receive" function nil nil [57 82])
+            ("send" function nil nil [82 118])
+            ("clean" function nil nil [118 136])
+            ("scl" function nil nil [136 171]))          
+    :file "Makefile"
+    :pointmax 171
+    :fsize 170
+    :lastmodtime '(21788 37191 817416 100000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!mnt!hgfs!D!Code!cn!a3!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

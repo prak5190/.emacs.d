@@ -1,0 +1,16 @@
+;; Object controllers/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "controllers/"
+  :tables
+  (list
+    (semanticdb-table "MainCtrlTest.js"
+      :major-mode 'js-mode
+      :tags nil
+      :file "MainCtrlTest.js"
+      :pointmax 893
+      :fsize 928
+      :lastmodtime '(21738 40793 0 0)
+      :unmatched-syntax '((PAREN_BLOCK 91 . 892))))
+  :file "!drive_e!crest!bddlt!peri-js!test!unit!controllers!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

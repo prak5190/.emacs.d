@@ -1,0 +1,566 @@
+;; Object a2/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "a2/"
+  :tables (list 
+   (semanticdb-table "Makefile"
+    :major-mode 'makefile-gmake-mode
+    :tags 
+        '( ("all" function nil nil [1 25])
+            ("compile" function nil nil [26 218])
+            ("tcpserver" function nil nil [219 263])
+            ("tcpclient" function nil nil [264 308])
+            ("udpserver" function nil nil [309 353])
+            ("udpclient" function nil nil [354 398]))          
+    :file "Makefile"
+    :pointmax 398
+    :fsize 397
+    :lastmodtime '(21729 33406 0 0)
+    :unmatched-syntax '((shell-command 386 . 397) (bol 385 . 385))
+    )
+   (semanticdb-table "udpclient.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("cstdio" include (:system-flag t) nil [21 38])
+            ("cstdlib" include (:system-flag t) nil [39 57])
+            ("cstring" include (:system-flag t) nil [58 76])
+            ("unistd.h" include (:system-flag t) nil [77 96])
+            ("common.cpp" include nil nil [97 118])
+            ("sys/types.h" include (:system-flag t) nil [119 141])
+            ("sys/socket.h" include (:system-flag t) nil [152 175])
+            ("sys/un.h" include (:system-flag t) nil [176 195])
+            ("netinet/in.h" include (:system-flag t) nil [215 238])
+            ("arpa/inet.h" include (:system-flag t) nil [259 281])
+            ("netdb.h" include (:system-flag t) nil [303 321])
+            ("BUF_SIZE" variable (:constant-flag t) nil [331 339])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [344 364])
+            ("client" function
+               (:arguments 
+                  ( ("portno" variable (:type "int") (reparse-symbol arg-sub-list) [398 410])
+                    ("host" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [411 429])
+                    ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [430 448]))                  
+                :type "int")
+                nil [386 2005])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [2036 2046])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2046 2058]))                  
+                :type "int")
+                nil [2026 2310]))          
+    :file "udpclient.cpp"
+    :pointmax 2311
+    :fsize 2310
+    :lastmodtime '(21731 31710 0 0)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("BUF_SIZE" . ((number "100" 340 . 343)))
+          )
+
+    )
+   (semanticdb-table "common.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("__COMMON__" variable (:constant-flag t) nil [28 38])
+            ("iostream" include (:system-flag t) nil [42 61])
+            ("cstdio" include (:system-flag t) nil [62 79])
+            ("cstdlib" include (:system-flag t) nil [80 98])
+            ("cstring" include (:system-flag t) nil [99 117])
+            ("stdarg.h" include (:system-flag t) nil [118 137])
+            ("sys/types.h" include (:system-flag t) nil [138 160])
+            ("sys/socket.h" include (:system-flag t) nil [171 194])
+            ("sys/un.h" include (:system-flag t) nil [195 214])
+            ("unistd.h" include (:system-flag t) nil [215 234])
+            ("signal.h" include (:system-flag t) nil [235 254])
+            ("cstdarg" include (:system-flag t) nil [256 274])
+            ("error.h" include (:system-flag t) nil [275 293])
+            ("time.h" include (:system-flag t) nil [294 311])
+            ("iostream" include (:system-flag t) nil [312 331])
+            ("memory" include (:system-flag t) nil [332 349])
+            ("cstdio" include (:system-flag t) nil [350 367])
+            ("iomanip" include (:system-flag t) nil [368 386])
+            ("cstdlib" include (:system-flag t) nil [388 406])
+            ("cstring" include (:system-flag t) nil [407 425])
+            ("stdarg.h" include (:system-flag t) nil [426 445])
+            ("sys/types.h" include (:system-flag t) nil [446 468])
+            ("sys/socket.h" include (:system-flag t) nil [479 502])
+            ("sys/epoll.h" include (:system-flag t) nil [503 525])
+            ("netinet/in.h" include (:system-flag t) nil [527 550])
+            ("netinet/ip.h" include (:system-flag t) nil [551 574])
+            ("netinet/ip_icmp.h" include (:system-flag t) nil [575 603])
+            ("sys/stat.h" include (:system-flag t) nil [618 639])
+            ("sys/un.h" include (:system-flag t) nil [640 659])
+            ("unistd.h" include (:system-flag t) nil [660 679])
+            ("fcntl.h" include (:system-flag t) nil [680 698])
+            ("signal.h" include (:system-flag t) nil [699 718])
+            ("cstdarg" include (:system-flag t) nil [720 738])
+            ("error.h" include (:system-flag t) nil [739 757])
+            ("cmath" include (:system-flag t) nil [758 774])
+            ("openssl/sha.h" include (:system-flag t) nil [775 799])
+            ("time.h" include (:system-flag t) nil [817 834])
+            ("sys/time.h" include (:system-flag t) nil [835 856])
+            ("iostream" include (:system-flag t) nil [857 876])
+            ("memory" include (:system-flag t) nil [877 894])
+            ("cstdio" include (:system-flag t) nil [895 912])
+            ("iomanip" include (:system-flag t) nil [913 931])
+            ("cstdlib" include (:system-flag t) nil [933 951])
+            ("cstring" include (:system-flag t) nil [952 970])
+            ("stdarg.h" include (:system-flag t) nil [971 990])
+            ("sys/types.h" include (:system-flag t) nil [991 1013])
+            ("sys/socket.h" include (:system-flag t) nil [1024 1047])
+            ("sys/epoll.h" include (:system-flag t) nil [1048 1070])
+            ("netinet/in.h" include (:system-flag t) nil [1072 1095])
+            ("netinet/ip.h" include (:system-flag t) nil [1096 1119])
+            ("netinet/ip_icmp.h" include (:system-flag t) nil [1120 1148])
+            ("sys/stat.h" include (:system-flag t) nil [1163 1184])
+            ("sys/un.h" include (:system-flag t) nil [1185 1204])
+            ("unistd.h" include (:system-flag t) nil [1205 1224])
+            ("fcntl.h" include (:system-flag t) nil [1225 1243])
+            ("signal.h" include (:system-flag t) nil [1244 1263])
+            ("cstdarg" include (:system-flag t) nil [1265 1283])
+            ("error.h" include (:system-flag t) nil [1284 1302])
+            ("cmath" include (:system-flag t) nil [1303 1319])
+            ("openssl/sha.h" include (:system-flag t) nil [1320 1344])
+            ("time.h" include (:system-flag t) nil [1362 1379])
+            ("sys/time.h" include (:system-flag t) nil [1380 1401])
+            ("bitset" include (:system-flag t) nil [1402 1419])
+            ("netinet/in.h" include (:system-flag t) nil [1439 1462])
+            ("arpa/inet.h" include (:system-flag t) nil [1483 1505])
+            ("netdb.h" include (:system-flag t) nil [1527 1545])
+            ("string.h" include (:system-flag t) nil [1546 1565])
+            ("memory" include (:system-flag t) nil [1566 1583])
+            ("cstdio" include (:system-flag t) nil [1584 1601])
+            ("iomanip" include (:system-flag t) nil [1602 1620])
+            ("cstdlib" include (:system-flag t) nil [1622 1640])
+            ("cstring" include (:system-flag t) nil [1641 1659])
+            ("stdarg.h" include (:system-flag t) nil [1660 1679])
+            ("sys/types.h" include (:system-flag t) nil [1680 1702])
+            ("sys/socket.h" include (:system-flag t) nil [1713 1736])
+            ("sys/epoll.h" include (:system-flag t) nil [1737 1759])
+            ("netinet/in.h" include (:system-flag t) nil [1761 1784])
+            ("netinet/ip.h" include (:system-flag t) nil [1785 1808])
+            ("netinet/ip_icmp.h" include (:system-flag t) nil [1809 1837])
+            ("sys/stat.h" include (:system-flag t) nil [1852 1873])
+            ("sys/un.h" include (:system-flag t) nil [1874 1893])
+            ("unistd.h" include (:system-flag t) nil [1894 1913])
+            ("fcntl.h" include (:system-flag t) nil [1914 1932])
+            ("signal.h" include (:system-flag t) nil [1933 1952])
+            ("cstdarg" include (:system-flag t) nil [1954 1972])
+            ("error.h" include (:system-flag t) nil [1973 1991])
+            ("cmath" include (:system-flag t) nil [1992 2008])
+            ("openssl/sha.h" include (:system-flag t) nil [2009 2033])
+            ("time.h" include (:system-flag t) nil [2051 2068])
+            ("sys/time.h" include (:system-flag t) nil [2069 2090])
+            ("netinet/in.h" include (:system-flag t) nil [2110 2133])
+            ("arpa/inet.h" include (:system-flag t) nil [2154 2176])
+            ("netdb.h" include (:system-flag t) nil [2198 2216])
+            ("string.h" include (:system-flag t) nil [2217 2236])
+            ("pthread.h" include (:system-flag t) nil [2237 2257])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [2258 2278])
+            ("http_headers" type
+               (:members 
+                  ( ("protocol" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [2305 2340])
+                    ("method" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [2305 2340])
+                    ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [2305 2340])
+                    ("contentLength" variable (:type "long") (reparse-symbol classsubparts) [2345 2364]))                  
+                :type "struct")
+                nil [2281 2367])
+            ("unknownexit" function
+               (:arguments 
+                  ( ("errno1" variable (:type "int") (reparse-symbol arg-sub-list) [2392 2403]))                  
+                :type "void")
+                nil [2375 2483])
+            ("error" function
+               (:arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2498 2514]))                  
+                :type "void")
+                nil [2486 2552])
+            ("parseHttpHeaders" function
+               (:pointer 1
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2585 2595]))                  
+                :type ("http_headers" type (:type "class") nil nil))
+                nil [2554 4038])
+            ("readFromSocket" function
+               (:pointer 1
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [4062 4069])
+                    ("n" variable
+                       (:reference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [4069 4076])
+                    ("" variable (:type "void") (reparse-symbol arg-sub-list) [4076 4086]))                  
+                :type "char")
+                nil [4041 4907])
+            ("readFromSocketS" function
+               (:pointer 1
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [4932 4939])
+                    ("n" variable
+                       (:reference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [4939 4946]))                  
+                :type "char")
+                nil [4910 5250])
+            ("readFromSocket1" function
+               (:pointer 1
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [5274 5281])
+                    ("n" variable
+                       (:reference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [5281 5288]))                  
+                :type "char")
+                nil [5252 5584])
+            ("writeToClient" function
+               (:arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5605 5622])
+                    ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [5623 5630]))                  
+                :type "int")
+                nil [5587 5676])
+            ("logLevel" variable (:type "int") nil [5701 5718])
+            ("log" function
+               (:arguments 
+                  ( ("level" variable (:type "int") (reparse-symbol arg-sub-list) [5728 5738])
+                    ("nargs" variable (:type "int") (reparse-symbol arg-sub-list) [5738 5749])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [5750 5754]))                  
+                :type "void")
+                nil [5719 5947])
+            ("client_args" type
+               (:members 
+                  ( ("path" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5973 5992])
+                    ("host" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5973 5992])
+                    ("isTime" variable (:type "bool") (reparse-symbol classsubparts) [5995 6007])
+                    ("protocol" variable (:type "int") (reparse-symbol classsubparts) [6010 6028])
+                    ("port" variable (:type "int") (reparse-symbol classsubparts) [6010 6028]))                  
+                :type "struct")
+                nil [5950 6031])
+            ("HTTP_HEADER" variable
+               (:pointer 1
+                :constant-flag t
+                :type "char")
+                nil [6050 6231])
+            ("getClientArgs" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [6260 6270])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6271 6283]))                  
+                :type ("client_args" type (:type "class") nil nil))
+                nil [6234 7502])
+            ("fileHandler.cpp" include nil nil [7597 7623]))          
+    :file "common.cpp"
+    :pointmax 7632
+    :fsize 5683
+    :lastmodtime '(21821 47809 430468 0)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("__COMMON__" . ((number "1" 39 . 40)))
+          )
+
+    )
+   (semanticdb-table "tcpclient.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("cstdio" include (:system-flag t) nil [21 38])
+            ("cstdlib" include (:system-flag t) nil [39 57])
+            ("cstring" include (:system-flag t) nil [58 76])
+            ("unistd.h" include (:system-flag t) nil [77 96])
+            ("common.cpp" include nil nil [97 118])
+            ("sys/types.h" include (:system-flag t) nil [119 141])
+            ("sys/socket.h" include (:system-flag t) nil [152 175])
+            ("sys/un.h" include (:system-flag t) nil [176 195])
+            ("netinet/in.h" include (:system-flag t) nil [215 238])
+            ("arpa/inet.h" include (:system-flag t) nil [259 281])
+            ("netdb.h" include (:system-flag t) nil [303 321])
+            ("BUF_SIZE" variable (:constant-flag t) nil [331 339])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [344 364])
+            ("end" variable (:type ("clock_t" type (:type "class") nil nil)) nil [366 385])
+            ("start" variable (:type ("clock_t" type (:type "class") nil nil)) nil [366 385])
+            ("cpu_time_used" variable (:type "double") nil [386 407])
+            ("isTime" variable (:type "bool") nil [408 436])
+            ("ondata" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [450 468])
+                    ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [469 476]))                  
+                :type "void")
+                nil [437 557])
+            ("client" function
+               (:arguments 
+                  ( ("portno" variable (:type "int") (reparse-symbol arg-sub-list) [591 603])
+                    ("host" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [604 622])
+                    ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [623 641])
+                    ("protocol" variable (:type "int") (reparse-symbol arg-sub-list) [641 654]))                  
+                :type "int")
+                nil [579 1910])
+            ("shutdown" function
+               (:arguments 
+                  ( ("dummy" variable (:type "int") (reparse-symbol arg-sub-list) [1927 1937]))                  
+                :type "void")
+                nil [1913 2014])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [2046 2056])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2056 2068]))                  
+                :type "int")
+                nil [2036 2580]))          
+    :file "tcpclient.cpp"
+    :pointmax 2581
+    :fsize 2580
+    :lastmodtime '(21731 54962 0 0)
+    :unmatched-syntax '((punctuation 2014 . 2015) (number 1937 . 1938) (punctuation 1936 . 1937) (punctuation 1910 . 1911) (punctuation 557 . 558))
+    :lexical-table 
+        '(("BUF_SIZE" . ((number "100" 340 . 343)))
+          )
+
+    )
+   (semanticdb-table "fileHandler.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("common.cpp" include nil nil [1 22])
+            ("sys/stat.h" include (:system-flag t) nil [23 44])
+            ("__FileHandler__" variable (:constant-flag t) nil [77 92])
+            ("getFile" function
+               (:arguments 
+                  ( ("fpath" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [109 128])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [129 138])
+                    ("sfd" variable (:type "int") (reparse-symbol arg-sub-list) [161 169]))                  
+                :type "int")
+                nil [97 679])
+            ("getFile" function
+               (:arguments 
+                  ( ("fpath" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [693 712])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [713 722])
+                    ("sfd" variable (:type "int") (reparse-symbol arg-sub-list) [794 803])
+                    ("clientaddr" variable
+                       (:pointer 1
+                        :type ("sockaddr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [804 825])
+                    ("clientlen" variable (:type ("socklen_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [825 845]))                  
+                :type "int")
+                nil [681 1172]))          
+    :file "fileHandler.cpp"
+    :pointmax 1181
+    :fsize 1180
+    :lastmodtime '(21731 54216 0 0)
+    :unmatched-syntax '((semantic-list 722 . 791) (semantic-list 717 . 722) (semantic-list 138 . 158) (semantic-list 133 . 138))
+    :lexical-table 
+        '(("__FileHandler__" . ((number "1" 93 . 94)))
+          )
+
+    )
+   (semanticdb-table "tcpserver.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("common.cpp" include nil nil [1 22])
+            ("pthread.h" include (:system-flag t) nil [23 43])
+            ("netinet/in.h" include (:system-flag t) nil [63 86])
+            ("arpa/inet.h" include (:system-flag t) nil [107 129])
+            ("BUF_SIZE" variable (:constant-flag t) nil [139 147])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [152 172])
+            ("thread_args" type
+               (:members 
+                  ( ("sfd" variable (:type "int") (reparse-symbol classsubparts) [198 206]))                  
+                :type "struct")
+                nil [175 209])
+            ("justDisplayTime" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [210 246])
+            ("isPersistent" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [247 280])
+            ("signal_callback_handler" function
+               (:arguments 
+                  ( ("signum" variable (:type "int") (reparse-symbol arg-sub-list) [335 346]))                  
+                :type "void")
+                nil [306 396])
+            ("handle_connection" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("t" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [422 430]))                  
+                :type "void")
+                nil [398 431])
+            ("sfd" variable (:type "int") nil [453 497])
+            ("shutdown_tcp" function (:type "int") nil [499 718])
+            ("create_server" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [740 749]))                  
+                :type "int")
+                nil [722 2138])
+            ("handle_connection" function
+               (:pointer 1
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2165 2176]))                  
+                :type "void")
+                nil [2141 4306])
+            ("shutdown" function
+               (:arguments 
+                  ( ("dummy" variable (:type "int") (reparse-symbol arg-sub-list) [4322 4332]))                  
+                :type "void")
+                nil [4308 4429])
+            ("print" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4441 4457]))                  
+                :type "int")
+                nil [4431 4502])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [4534 4544])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4544 4556]))                  
+                :type "int")
+                nil [4524 5220]))          
+    :file "tcpserver.cpp"
+    :pointmax 5221
+    :fsize 5220
+    :lastmodtime '(21821 47809 444497 200000)
+    :unmatched-syntax '((number 4332 . 4333) (punctuation 4331 . 4332) (punctuation 2138 . 2139) (punctuation 718 . 719))
+    :lexical-table 
+        '(("BUF_SIZE" . ((number "100" 148 . 151)))
+          )
+
+    )
+   (semanticdb-table "epoll_test.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("stdlib.h" include (:system-flag t) nil [20 39])
+            ("errno.h" include (:system-flag t) nil [40 58])
+            ("string.h" include (:system-flag t) nil [59 78])
+            ("sys/types.h" include (:system-flag t) nil [79 101])
+            ("sys/socket.h" include (:system-flag t) nil [102 125])
+            ("netdb.h" include (:system-flag t) nil [126 144])
+            ("arpa/inet.h" include (:system-flag t) nil [145 167])
+            ("netinet/in.h" include (:system-flag t) nil [168 191])
+            ("unistd.h" include (:system-flag t) nil [192 211])
+            ("fcntl.h" include (:system-flag t) nil [212 230])
+            ("sys/epoll.h" include (:system-flag t) nil [231 253])
+            ("MAXEVENTS" variable (:constant-flag t) nil [264 273])
+            ("create_and_bind" function
+               (:arguments 
+                  ( ("port" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [300 311]))                  
+                :type "int")
+                nil [279 1638])
+            ("make_socket_non_blocking" function
+               (:arguments 
+                  ( ("sfd" variable (:type "int") (reparse-symbol arg-sub-list) [1671 1679]))                  
+                :type "int")
+                nil [1641 1945])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [1959 1968])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1969 1981]))                  
+                :type "int")
+                nil [1950 5959]))          
+    :file "epoll_test.c"
+    :pointmax 5960
+    :fsize 6119
+    :lastmodtime '(21820 55651 387568 700000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("MAXEVENTS" . ((number "64" 274 . 276)))
+          )
+
+    )
+   )
+  :file "!mnt!hgfs!D!Code!cn!a2!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

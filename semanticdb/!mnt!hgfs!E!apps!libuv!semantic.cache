@@ -1,0 +1,66 @@
+;; Object libuv/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libuv/"
+  :tables (list 
+   (semanticdb-table "Makefile.am"
+    :major-mode 'makefile-automake-mode
+    :tags 
+        '( ("ACLOCAL_AMFLAGS" variable (:default-value ("-I" "m4")) nil [779 803])
+            ("AM_CPPFLAGS" variable (:default-value ("-I$(top_srcdir)/include" "-I$(top_srcdir)/src")) nil [804 878])
+            ("include_HEADERS" variable (:default-value ("include/uv.h" "include/uv-errno.h" "include/uv-threadpool.h" "include/uv-version.h")) nil [879 972])
+            ("CLEANFILES" variable nil nil [973 986])
+            ("lib_LTLIBRARIES" variable (:default-value ("libuv.la")) nil [987 1014])
+            ("libuv_la_CFLAGS" variable (:default-value ("@CFLAGS@")) nil [1014 1041])
+            ("libuv_la_LDFLAGS" variable (:default-value ("-no-undefined" "-version-info" "1:0:0")) nil [1041 1094])
+            ("libuv_la_SOURCES" variable (:default-value ("src/fs-poll.c" "src/heap-inl.h" "src/inet.c" "src/queue.h" "src/threadpool.c" "src/uv-common.c" "src/uv-common.h" "src/version.c")) nil [1094 1375])
+            ("libuv_la_CFLAGS" variable (:default-value ("-pthread")) nil [1540 1568])
+            ("include_HEADERS" variable (:default-value ("include/uv-win.h" "include/tree.h")) nil [1585 1636])
+            ("AM_CPPFLAGS" variable (:default-value ("-I$(top_srcdir)/src/win" "-DWIN32_LEAN_AND_MEAN" "-D_WIN32_WINNT=0x0600")) nil [1636 1753])
+            ("LIBS" variable (:default-value ("-lws2_32" "-lpsapi" "-liphlpapi" "-lshell32")) nil [1753 1799])
+            ("libuv_la_SOURCES" variable (:default-value ("src/win/async.c" "src/win/atomicops-inl.h" "src/win/core.c" "src/win/dl.c" "src/win/error.c" "src/win/fs-event.c" "src/win/fs.c" "src/win/getaddrinfo.c" "src/win/getnameinfo.c" "src/win/handle.c" "src/win/handle-inl.h" "src/win/internal.h" "src/win/loop-watcher.c" "src/win/pipe.c" "src/win/poll.c" "src/win/process-stdio.c" "src/win/process.c" "src/win/req.c" "src/win/req-inl.h" "src/win/signal.c" "src/win/stream.c" "src/win/stream-inl.h" "src/win/tcp.c" "src/win/thread.c" "src/win/timer.c" "src/win/tty.c" "src/win/udp.c" "src/win/util.c" "src/win/winapi.c" "src/win/winapi.h" "src/win/winsock.c" "src/win/winsock.h")) nil [1799 3060])
+            ("include_HEADERS" variable (:default-value ("include/uv-unix.h")) nil [3076 3113])
+            ("AM_CPPFLAGS" variable (:default-value ("-I$(top_srcdir)/src/unix")) nil [3113 3153])
+            ("libuv_la_SOURCES" variable (:default-value ("src/unix/async.c" "src/unix/atomic-ops.h" "src/unix/core.c" "src/unix/dl.c" "src/unix/fs.c" "src/unix/getaddrinfo.c" "src/unix/getnameinfo.c" "src/unix/internal.h" "src/unix/loop-watcher.c" "src/unix/loop.c" "src/unix/pipe.c" "src/unix/poll.c" "src/unix/process.c" "src/unix/signal.c" "src/unix/spinlock.h" "src/unix/stream.c" "src/unix/tcp.c" "src/unix/thread.c" "src/unix/timer.c" "src/unix/tty.c" "src/unix/udp.c")) nil [3153 3969])
+            ("TESTS" variable (:default-value ("test/run-tests")) nil [4450 4473])
+            ("check_PROGRAMS" variable (:default-value ("test/run-tests")) nil [4473 4505])
+            ("test_run_tests_CFLAGS" variable nil nil [4505 4529])
+            ("test_run_tests_SOURCES" variable (:default-value ("test/blackhole-server.c" "test/dns-server.c" "test/echo-server.c" "test/run-tests.c" "test/runner.c" "test/runner.h" "test/task.h" "test/test-active.c" "test/test-async.c" "test/test-async-null-cb.c" "test/test-barrier.c" "test/test-callback-order.c" "test/test-callback-stack.c" "test/test-close-fd.c" "test/test-close-order.c" "test/test-condvar.c" "test/test-connection-fail.c" "test/test-cwd-and-chdir.c" "test/test-default-loop-close.c" "test/test-delayed-accept.c" "test/test-dlerror.c" "test/test-embed.c" "test/test-emfile.c" "test/test-error.c" "test/test-fail-always.c" "test/test-fs-event.c" "test/test-fs-poll.c" "test/test-fs.c" "test/test-get-currentexe.c" "test/test-get-loadavg.c" "test/test-get-memory.c" "test/test-getaddrinfo.c" "test/test-getnameinfo.c" "test/test-getsockname.c" "test/test-handle-fileno.c" "test/test-hrtime.c" "test/test-idle.c" "test/test-ip4-addr.c" "test/test-ip6-addr.c" "test/test-ipc-send-recv.c" "test/test-ipc.c" "test/test-list.h" "test/test-loop-handles.c" "test/test-loop-alive.c" "test/test-loop-close.c" "test/test-loop-stop.c" "test/test-loop-time.c" "test/test-loop-configure.c" "test/test-multiple-listen.c" "test/test-mutexes.c" "test/test-osx-select.c" "test/test-pass-always.c" "test/test-ping-pong.c" "test/test-pipe-bind-error.c" "test/test-pipe-connect-error.c" "test/test-pipe-getsockname.c" "test/test-pipe-sendmsg.c" "test/test-pipe-server-close.c" "test/test-pipe-close-stdout-read-stdin.c" "test/test-pipe-set-non-blocking.c" "test/test-platform-output.c" "test/test-poll-close.c" "test/test-poll-close-doesnt-corrupt-stack.c" "test/test-poll-closesocket.c" "test/test-poll.c" "test/test-process-title.c" "test/test-ref.c" "test/test-run-nowait.c" "test/test-run-once.c" "test/test-semaphore.c" "test/test-shutdown-close.c" "test/test-shutdown-eof.c" "test/test-shutdown-twice.c" "test/test-signal-multiple-loops.c" "test/test-signal.c" "test/test-socket-buffer-size.c" "test/test-spawn.c" "test/test-stdio-over-pipes.c" "test/test-tcp-bind-error.c" "test/test-tcp-bind6-error.c" "test/test-tcp-close-accept.c" "test/test-tcp-close-while-connecting.c" "test/test-tcp-close.c" "test/test-tcp-connect-error-after-write.c" "test/test-tcp-connect-error.c" "test/test-tcp-connect-timeout.c" "test/test-tcp-connect6-error.c" "test/test-tcp-flags.c" "test/test-tcp-open.c" "test/test-tcp-read-stop.c" "test/test-tcp-shutdown-after-write.c" "test/test-tcp-unexpected-read.c" "test/test-tcp-oob.c" "test/test-tcp-write-to-half-open-connection.c" "test/test-tcp-write-after-connect.c" "test/test-tcp-writealot.c" "test/test-tcp-try-write.c" "test/test-tcp-write-queue-order.c" "test/test-thread-equal.c" "test/test-thread.c" "test/test-threadpool-cancel.c" "test/test-threadpool.c" "test/test-timer-again.c" "test/test-timer-from-check.c" "test/test-timer.c" "test/test-tty.c" "test/test-udp-bind.c" "test/test-udp-dgram-too-big.c" "test/test-udp-ipv6.c" "test/test-udp-multicast-interface.c" "test/test-udp-multicast-interface6.c" "test/test-udp-multicast-join.c" "test/test-udp-multicast-join6.c" "test/test-udp-multicast-ttl.c" "test/test-udp-open.c" "test/test-udp-options.c" "test/test-udp-send-and-recv.c" "test/test-udp-send-immediate.c" "test/test-udp-send-unreachable.c" "test/test-udp-try-send.c" "test/test-walk-handles.c" "test/test-watcher-cross-stop.c")) nil [4529 10901])
+            ("test_run_tests_LDADD" variable (:default-value ("libuv.la")) nil [10901 10933])
+            ("test_run_tests_SOURCES" variable (:default-value ("test/runner-win.c" "test/runner-win.h")) nil [10943 11033])
+            ("test_run_tests_SOURCES" variable (:default-value ("test/runner-unix.c" "test/runner-unix.h")) nil [11038 11130])
+            ("test_run_tests_CFLAGS" variable (:default-value ("-D_ALL_SOURCE" "-D_XOPEN_SOURCE=500" "-D_LINUX_SOURCE_COMPAT")) nil [11144 11226])
+            ("test_run_tests_CFLAGS" variable (:default-value ("-D__EXTENSIONS__" "-D_XOPEN_SOURCE=500")) nil [11242 11304])
+            ("libuv_la_CFLAGS" variable (:default-value ("-D_ALL_SOURCE" "-D_XOPEN_SOURCE=500" "-D_LINUX_SOURCE_COMPAT")) nil [11319 11395])
+            ("libuv_la_SOURCES" variable (:default-value ("src/unix/aix.c")) nil [11395 11430])
+            ("include_HEADERS" variable (:default-value ("include/android-ifaddrs.h" "include/pthread-fixes.h")) nil [11448 11538])
+            ("libuv_la_SOURCES" variable (:default-value ("src/unix/android-ifaddrs.c" "src/unix/pthread-fixes.c")) nil [11538 11632])
+            ("include_HEADERS" variable (:default-value ("include/uv-darwin.h")) nil [11649 11688])
+            ("libuv_la_CFLAGS" variable (:default-value ("-D_DARWIN_USE_64_BIT_INODE=1")) nil [11688 11736])
+            ("libuv_la_CFLAGS" variable (:default-value ("-D_DARWIN_UNLIMITED_SELECT=1")) nil [11736 11784])
+            ("libuv_la_SOURCES" variable (:default-value ("src/unix/darwin.c" "src/unix/darwin-proctitle.c" "src/unix/fsevents.c" "src/unix/kqueue.c" "src/unix/proctitle.c")) nil [11784 11997])
+            ("include_HEADERS" variable (:default-value ("include/uv-bsd.h")) nil [12017 12053])
+            ("include_HEADERS" variable (:default-value ("include/uv-bsd.h")) nil [12071 12107])
+            ("libuv_la_SOURCES" variable (:default-value ("src/unix/freebsd.c" "src/unix/kqueue.c")) nil [12107 12164])
+            ("include_HEADERS" variable (:default-value ("include/uv-linux.h")) nil [12180 12218])
+            ("libuv_la_CFLAGS" variable (:default-value ("-D_GNU_SOURCE")) nil [12218 12251])
+            ("libuv_la_SOURCES" variable (:default-value ("src/unix/linux-core.c" "src/unix/linux-inotify.c" "src/unix/linux-syscalls.c" "src/unix/linux-syscalls.h" "src/unix/proctitle.c")) nil [12251 12479])
+            ("include_HEADERS" variable (:default-value ("include/uv-bsd.h")) nil [12496 12532])
+            ("libuv_la_SOURCES" variable (:default-value ("src/unix/kqueue.c" "src/unix/netbsd.c")) nil [12532 12588])
+            ("include_HEADERS" variable (:default-value ("include/uv-bsd.h")) nil [12606 12642])
+            ("libuv_la_SOURCES" variable (:default-value ("src/unix/kqueue.c" "src/unix/openbsd.c")) nil [12642 12699])
+            ("include_HEADERS" variable (:default-value ("include/uv-sunos.h")) nil [12715 12753])
+            ("libuv_la_CFLAGS" variable (:default-value ("-D__EXTENSIONS__" "-D_XOPEN_SOURCE=500")) nil [12753 12809])
+            ("libuv_la_SOURCES" variable (:default-value ("src/unix/sunos.c")) nil [12809 12846])
+            ("pkgconfigdir" variable (:default-value ("$(libdir)/pkgconfig")) nil [12872 12907])
+            ("pkgconfig_DATA" variable (:default-value ("@PACKAGE_NAME@.pc")) nil [12907 12942]))          
+    :file "Makefile.am"
+    :pointmax 12948
+    :fsize 12947
+    :lastmodtime '(21830 50209 256867 700000)
+    :unmatched-syntax '((symbol 4440 . 4446) (symbol 4415 . 4424) (symbol 4388 . 4399) (symbol 4358 . 4372) (symbol 4331 . 4342) (symbol 4301 . 4315) (symbol 4276 . 4285) (symbol 4253 . 4260) (symbol 4222 . 4237) (symbol 4189 . 4206) (symbol 4166 . 4173) (symbol 4147 . 4150) (symbol 4127 . 4131) (symbol 4107 . 4111) (INCLUDE 4084 . 4091) (symbol 4039 . 4068) (symbol 3999 . 4023) (punctuation 3997 . 3998) (symbol 3986 . 3996) (bol 3986 . 3986) (ENDIF 3970 . 3975) (bol 3970 . 3970) (ELSE 3061 . 3065) (bol 3061 . 3061))
+    )
+   )
+  :file "!mnt!hgfs!E!apps!libuv!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

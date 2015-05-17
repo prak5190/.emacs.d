@@ -1,0 +1,52 @@
+clear
+cls
+clear
+clear
+git staths
+git status
+exit
+g++ -v
+cd ..
+cd test/
+ls
+g++ mcast-send.c
+g++ mcast-send.c
+cleart
+g++ mcast-send.c
+gcc mcast-send.c -f
+gcc mcast-send.c
+g++ mcast-send.c
+gcc mcast-send.c
+gcc mcast-recv.c 
+gcc mcast
+gcc mcast-send.c -o b
+./b 
+./b 225.0.2.1 12342
+omni
+cd ~/e/crest/omni/gcf-2.8
+ls
+cd 
+cd .ssh/
+ls
+cd ..
+ls
+cd .ssl/
+ls
+ls
+cd ..
+cd .ssl/
+cd ..
+cd .ssh/
+ls
+cd ..
+git push
+sudo emacs /etc/ssh/ssh_config 
+sudo emacs -nw /etc/ssh/ssh_config 
+exit
+git push
+exit
+git puhs
+git push
+git push
+git push
+gtags

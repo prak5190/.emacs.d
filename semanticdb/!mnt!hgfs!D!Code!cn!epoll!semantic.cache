@@ -1,0 +1,58 @@
+;; Object epoll/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "epoll/"
+  :tables (list 
+   (semanticdb-table "server.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("stdlib.h" include (:system-flag t) nil [20 39])
+            ("string.h" include (:system-flag t) nil [40 59])
+            ("sys/types.h" include (:system-flag t) nil [60 82])
+            ("sys/socket.h" include (:system-flag t) nil [83 106])
+            ("netdb.h" include (:system-flag t) nil [107 125])
+            ("unistd.h" include (:system-flag t) nil [126 145])
+            ("fcntl.h" include (:system-flag t) nil [146 164])
+            ("sys/epoll.h" include (:system-flag t) nil [165 187])
+            ("errno.h" include (:system-flag t) nil [188 206])
+            ("MAXEVENTS" variable (:constant-flag t) nil [216 225])
+            ("make_socket_non_blocking" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sfd" variable (:type "int") (reparse-symbol arg-sub-list) [267 275]))                  
+                :type "int")
+                nil [230 543])
+            ("create_and_bind" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("port" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [573 584]))                  
+                :type "int")
+                nil [545 1533])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [1545 1554])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1555 1568]))                  
+                :type "int")
+                nil [1535 6916]))          
+    :file "server.cpp"
+    :pointmax 6885
+    :fsize 6916
+    :lastmodtime '(21820 25487 901595 600000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("MAXEVENTS" . ((number "64" 226 . 228)))
+          )
+
+    )
+   )
+  :file "!mnt!hgfs!D!Code!cn!epoll!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

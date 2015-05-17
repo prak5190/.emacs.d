@@ -1,0 +1,16 @@
+;; Object test/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "test/"
+  :tables
+  (list
+    (semanticdb-table "karma.conf.js"
+      :major-mode 'js-mode
+      :tags nil
+      :file "karma.conf.js"
+      :pointmax 2231
+      :fsize 2313
+      :lastmodtime '(21840 20485 0 0)
+      :unmatched-syntax '((FUNCTION 98 . 106) (PAREN_BLOCK 106 . 114))))
+  :file "!drive_e!crest!bddlt!peri-js!test!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

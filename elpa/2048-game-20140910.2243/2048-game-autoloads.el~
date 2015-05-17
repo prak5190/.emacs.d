@@ -1,0 +1,13 @@
+;;; 2048-game-autoloads.el --- automatically extracted autoloads
+;;
+;;; Code:
+
+
+(provide '2048-game-autoloads)
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; no-update-autoloads: t
+;; coding: utf-8
+;; End:
+;;; 2048-game-autoloads.el ends here

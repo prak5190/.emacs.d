@@ -1,0 +1,24 @@
+;; Object linux/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "linux/"
+  :tables (list 
+   (semanticdb-table "ioctl.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("_LINUX_IOCTL_H" variable (:constant-flag t) nil [32 46])
+            ("asm/ioctl.h" include (:system-flag t) nil [48 70]))          
+    :file "ioctl.h"
+    :pointmax 101
+    :fsize 100
+    :lastmodtime '(21318 64187 0 0)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("_LINUX_IOCTL_H")
+          )
+
+    )
+   )
+  :file "!usr!include!linux!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )
