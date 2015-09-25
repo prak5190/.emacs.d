@@ -1,0 +1,2 @@
+* My Emacs config 
+Just clone the repo and run boot.sh , copies init.el and install everythng required except gtags for C
