@@ -1,1 +1,0 @@
-#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8 data ("d:/Dropbox/Dropbox/.emacs.d/elpa/flappymacs-20140715.901/" ("flappymacs-autoloads.el") "e:/Crest/periscope/" ("peri-js/app/read.md" "peri-js/app/routes.js") "c:/Users/el/" ("%appdata%") "d:/Dropbox/Dropbox/.emacs.d/" ("init.el")))
