@@ -12,7 +12,7 @@
 (progn
   (setq package-list '(flx-ido tern js2-mode sr-speedbar tabbar fiplr magit multiple-cursors helm tern multiple-cursors
 			       yasnippet auto-complete helm-gtags markdown-mode web-mode move-text web-beautify jedi python-mode
-			       ac-js2 tern-auto-complete yaml-mode))
+			       ac-js2 tern-auto-complete yaml-mode racket-mode quack geiser))
   ;; Now putting some autoInstall stuff
   (setq package-archives '(
 			   ("gnu" . "http://elpa.gnu.org/packages/")
