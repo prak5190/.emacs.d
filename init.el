@@ -44,6 +44,7 @@
  '(ac-use-fuzzy t)
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
+ '(web-mode-markup-indent-offset 2)
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(custom-enabled-themes (quote (misterioso)))
@@ -85,7 +86,7 @@
 (global-set-key (kbd "M-b") 'ido-switch-buffer)
 (global-set-key (kbd "M-b") 'ido-switch-buffer)
 (require 'org)
-(global-set-key (kbd "C-t") 'org-todo-list)
+(global-set-key (kbd "C-t") 'org-iswitchb)
 ;;********************* End shortcuts *******************************************
 ;;********************* Org Mode  ********************************************
 
