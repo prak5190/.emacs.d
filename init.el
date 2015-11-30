@@ -11,13 +11,13 @@
 ;; list the packages you want
 (progn
   (setq package-list '(flx-ido tern js2-mode sr-speedbar tabbar fiplr magit multiple-cursors helm tern multiple-cursors
-			       yasnippet auto-complete helm-gtags markdown-mode web-mode move-text web-beautify jedi python-mode
-			       ac-js2 tern-auto-complete yaml-mode racket-mode quack geiser))
+			       yasnippet auto-complete helm-gtags markdown-mode web-mode move-text web-beautify jedi python-mode transpose-frame
+			       ac-js2 tern-auto-complete yaml-mode racket-mode quack geiser let-alist))
   ;; Now putting some autoInstall stuff
   (setq package-archives '(
+			   ("melpa-stable" . "http://stable.melpa.org/packages/")
 			   ("gnu" . "http://elpa.gnu.org/packages/")
 			   ("marmalade" . "http://marmalade-repo.org/packages/")
-			   ("melpa-stable" . "http://stable.melpa.org/packages/")
 			   ("melpa" . "http://melpa.milkbox.net/packages/")
 			   ))
 
@@ -44,11 +44,17 @@
  '(ac-use-fuzzy t)
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
- '(web-mode-markup-indent-offset 2)
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(custom-enabled-themes (quote (misterioso)))
- '(ecb-options-version "2.40"))
+ '(ecb-options-version "2.40")
+ '(org-agenda-files (quote ("~/e/crest" "~/Dropbox/org" "~/e/apps")))
+ '(org-support-shift-select t)
+ '(standard-indent 2)
+ '(web-mode-block-padding 2)
+ '(web-mode-code-indent-offset 2)
+ '(web-mode-markup-indent-offset 2)
+ '(web-mode-script-padding 2))
 ;; ;********************** Flx IDO stuff ********************8
 (require 'flx-ido)
 (ido-mode 1)
@@ -58,6 +64,10 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 (setq gc-cons-threshold 20000000)
+;;********************* Transpose frame  *****************************************
+(require 'transpose-frame)
+(global-set-key (kbd "s-r") 'rotate-frame-clockwise)
+;;********************* End transpose frame *****************************************
 ;; ;************************* Speedbar Related customization ******************
 (require 'sr-speedbar)
 (global-set-key (kbd "C-0") 'sr-speedbar-toggle)
@@ -87,6 +97,7 @@
 (global-set-key (kbd "M-b") 'ido-switch-buffer)
 (require 'org)
 (global-set-key (kbd "C-t") 'org-iswitchb)
+
 ;;********************* End shortcuts *******************************************
 ;;********************* Org Mode  ********************************************
 
@@ -153,6 +164,8 @@
              '("html" . (ac-source-html-tag
                          ac-source-html-attribute)))
 (add-to-list 'auto-mode-alist '("\\.html*\\'" . web-mode))
+(setq web-mode-markup-indent-offset 2)
+(setq standard-indent 2)
 ;; ;;*********** JS2 and tern *****************************
 (eval-after-load 'tern
    '(progn
@@ -208,3 +221,11 @@
             (local-set-key (kbd "M-.") 'jedi:goto-definition))))
 ;; (add-hook 'python-mode-hook 'autopair-mode)(add-hook 'python-mode-hook 'auto-complete-mode)
 ;; ******************* End Python suff ***********************************
+;; *********************************** Ruby ***********************************
+(progn
+  (defun ri-bind-key ()
+    (local-set-key [C-j] 'yari-helm))
+
+  (add-hook 'ruby-mode-hook 'ri-bind-key)
+  )
+;; *********************************** End Ruby stuff ***********************************
