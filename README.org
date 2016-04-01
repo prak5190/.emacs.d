@@ -1,2 +1,6 @@
 * My Emacs config 
+
 Just clone the repo and run boot.sh , copies init.el and install everythng required except gtags for C
+
+* Build Status
+[[https://travis-ci.org/mytoh/dotemacsd][file:https://travis-ci.org/mytoh/dotemacsd.svg?branch=master]]
