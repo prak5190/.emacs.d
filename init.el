@@ -13,7 +13,7 @@
   (setq package-list '(flx-ido tern js2-mode sr-speedbar tabbar fiplr magit multiple-cursors helm tern multiple-cursors
 			       yasnippet auto-complete helm-gtags markdown-mode web-mode move-text web-beautify jedi python-mode transpose-frame vlf auto-compile
 			       ;; Taken from https://github.com/tuhdo/emacs-c-ide-demo/blob/master/init.el
-			       anzu duplicate-thing ggtags helm-gtags helm-projectile helm-swoop tabbar
+			       anzu duplicate-thing ggtags helm-gtags helm-projectile helm-swoop flycheck function-args merlin
 			       clean-aindent-mode comment-dwim-2 dtrt-indent ws-butler iedit yasnippet smartparens projectile volatile-highlights undo-tree zygospore
 			       ;; END
 			       ac-js2 tern-auto-complete yaml-mode racket-mode quack geiser let-alist haskell-mode shm hindent))
@@ -43,7 +43,6 @@
 (auto-compile-on-load-mode)
 (auto-compile-on-save-mode)
 (setq exec-path (append exec-path '("/home/el/scala/bin")))
-(load "~/.emacs.d/elpa/scribble.el")
 ;; **** Custom Vars- Theme and stuff ***********
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -419,7 +418,6 @@
   (setq merlin-command 'opam))
 ;;********************************** End OCaml stuff **********************************
 ;; ********************************** Java stuff **********************************
-(load "~/.emacs.d/java-mode-autoloads.el")
 (put 'upcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 
