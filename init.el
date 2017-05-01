@@ -13,7 +13,7 @@
   (setq package-list '(flx-ido tern js2-mode sr-speedbar tabbar fiplr magit multiple-cursors helm tern multiple-cursors
 			       yasnippet auto-complete helm-gtags markdown-mode web-mode move-text web-beautify jedi python-mode transpose-frame vlf auto-compile
 			       ;; Taken from https://github.com/tuhdo/emacs-c-ide-demo/blob/master/init.el
-			       anzu duplicate-thing ggtags helm-gtags helm-projectile helm-swoop
+			       anzu duplicate-thing ggtags helm-gtags helm-projectile helm-swoop tabbar
 			       clean-aindent-mode comment-dwim-2 dtrt-indent ws-butler iedit yasnippet smartparens projectile volatile-highlights undo-tree zygospore
 			       ;; END
 			       ac-js2 tern-auto-complete yaml-mode racket-mode quack geiser let-alist haskell-mode shm hindent))
@@ -103,57 +103,60 @@
 ;;****************************** Move lines up and down **********************
 
 ;;********************* Shortcuts *******************************************
-(require 'fiplr)
-(setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules"))
-                            (files ("*.jpg" "*.png" "*.zip" "*~"))))
-(global-set-key (kbd "C-.") 'rgrep)
-(global-set-key (kbd "s-j") 'helm-semantic-or-imenu)
-(global-set-key (kbd "C-;") 'ido-kill-buffer)
-(global-set-key (kbd "C-p") 'fiplr-find-file)
-(global-set-key (kbd "C-,") 'compile)	
-(global-set-key (kbd "C-Q") 'goto-line)	
-(global-set-key (kbd "C-x m") 'man)
-(global-set-key (kbd "C-x r") 'rename-buffer)
-(global-set-key (kbd "M-s") 'magit-status)
-(global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "M-f") 'ido-find-file)  
-(global-set-key (kbd "M-<up>") 'move-text-up)
-(global-set-key (kbd "M-<down>") 'move-text-down)
+(progn
+  (require 'fiplr)
+  (setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules"))
+			      (files ("*.jpg" "*.png" "*.zip" "*~"))))
+  (global-set-key (kbd "C-.") 'rgrep)
+  (global-set-key (kbd "s-j") 'helm-semantic-or-imenu)
+  (global-set-key (kbd "C-;") 'ido-kill-buffer)
+  (global-set-key (kbd "C-p") 'fiplr-find-file)
+  (global-set-key (kbd "C-,") 'compile)	
+  (global-set-key (kbd "C-Q") 'goto-line)	
+  (global-set-key (kbd "C-x m") 'man)
+  (global-set-key (kbd "C-x r") 'rename-buffer)
+  (global-set-key (kbd "M-s") 'magit-status)
+  (global-set-key (kbd "M-o") 'other-window)
+  (global-set-key (kbd "M-f") 'ido-find-file)  
+  (global-set-key (kbd "M-<up>") 'move-text-up)
+  (global-set-key (kbd "M-<down>") 'move-text-down)
 
-(global-set-key (kbd "M-b") 'ido-switch-buffer)
-(global-set-key (kbd "C-b") 'ido-switch-buffer-other-window)
-(require 'org)
-(global-set-key (kbd "C-t") 'org-iswitchb)
+  (global-set-key (kbd "M-b") 'ido-switch-buffer)
+  (global-set-key (kbd "C-b") 'ido-switch-buffer-other-window)
+  (require 'org)
+  (global-set-key (kbd "C-t") 'org-iswitchb)
+  (define-key global-map "\C-cl" 'org-store-link)
+  (define-key global-map "\C-ca" 'org-agenda)
+  (setq org-log-done t))
 
 ;;********************* End shortcuts *******************************************
 ;;********************* Org Mode  ********************************************
 
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
 
 ;;********************* Tabbar config  *******************************************
-(dolist (func '(tabbar-mode tabbar-forward-tab tabbar-forward-group tabbar-backward-tab tabbar-backward-group))
-  (autoload func "tabbar" "Tabs at the top of buffers and easy control-tab navigation"))
-(defmacro defun-prefix-alt (name on-no-prefix on-prefix &optional do-always)
-  `(defun ,name (arg)
-     (interactive "P")
-     ,do-always
-     (if (equal nil arg)
-	 ,on-no-prefix
-       ,on-prefix)))
-(defun-prefix-alt shk-tabbar-next (tabbar-forward-tab) (tabbar-forward-group) (tabbar-mode 1))
-(defun-prefix-alt shk-tabbar-prev (tabbar-backward-tab) (tabbar-backward-group) (tabbar-mode 1))
-(global-set-key [(control tab)] 'shk-tabbar-next)
-(global-set-key [(control shift tab)] 'shk-tabbar-prev)
+;; (progn 
+;; (dolist (func '(tabbar-mode tabbar-forward-tab tabbar-forward-group tabbar-backward-tab tabbar-backward-group))
+;;   (autoload func "tabbar" "Tabs at the top of buffers and easy control-tab navigation"))
+;; (defmacro defun-prefix-alt (name on-no-prefix on-prefix &optional do-always)
+;;   `(defun ,name (arg)
+;;      (interactive "P")
+;;      ,do-always
+;;      (if (equal nil arg)
+;; 	 ,on-no-prefix
+;;        ,on-prefix)))
+;; (defun-prefix-alt shk-tabbar-next (tabbar-forward-tab) (tabbar-forward-group) (tabbar-mode 1))
+;; (defun-prefix-alt shk-tabbar-prev (tabbar-backward-tab) (tabbar-backward-group) (tabbar-mode 1))
+;; (global-set-key [(control tab)] 'shk-tabbar-next)
+;; (global-set-key [(control shift tab)] 'shk-tabbar-prev))
 ;;********************* End Tabbar config  *******************************************
 ;;********************* Multiple Cursors *****************************************
-(require 'multiple-cursors)
+(progn
+  (require 'multiple-cursors)
 
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+  (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
 ;******************** End Multiple Cursors ************************************
 
 (custom-set-faces
@@ -164,15 +167,16 @@
  )
 
 ;; ;****************************** AC and YASnippet ***************
-(require 'auto-complete)
-; do default config for auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
-;; start yasnippet with emacs
-
 (progn
-  (require 'yasnippet)
-  (yas-global-mode 1))
+  (require 'auto-complete)
+					; do default config for auto-complete
+  (require 'auto-complete-config)
+  (ac-config-default)
+  ;; start yasnippet with emacs
+
+  (progn
+    (require 'yasnippet)
+    (yas-global-mode 1)))
 
 ;; ;************************* Web Mode ***********************************
 (require 'web-mode)
