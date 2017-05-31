@@ -10,10 +10,10 @@
 
 ;; list the packages you want
 (progn
-  (setq package-list '(flx-ido tern js2-mode sr-speedbar tabbar fiplr magit multiple-cursors helm tern multiple-cursors
+  (setq package-list '(flx-ido tern js2-mode sr-speedbar fiplr magit multiple-cursors helm tern multiple-cursors
 			       yasnippet auto-complete helm-gtags markdown-mode web-mode move-text web-beautify jedi python-mode transpose-frame vlf auto-compile
 			       ;; Taken from https://github.com/tuhdo/emacs-c-ide-demo/blob/master/init.el
-			       anzu duplicate-thing ggtags helm-gtags helm-projectile helm-swoop php-mode
+			       anzu duplicate-thing ggtags helm-gtags helm-projectile helm-swoop php-mode flycheck function-args merlin
 			       clean-aindent-mode comment-dwim-2 dtrt-indent ws-butler iedit yasnippet smartparens projectile volatile-highlights undo-tree zygospore
 			       ;; END
 			       ac-js2 tern-auto-complete yaml-mode racket-mode quack geiser let-alist haskell-mode shm hindent))
@@ -38,12 +38,12 @@
     (unless (package-installed-p package)
       (package-install package))))
 
-(setq load-prefer-newer t)
-(require 'auto-compile)
-(auto-compile-on-load-mode)
-(auto-compile-on-save-mode)
-(setq exec-path (append exec-path '("/home/el/scala/bin")))
-(load "~/.emacs.d/elpa/scribble.el")
+(progn
+  (setq load-prefer-newer t)
+  (require 'auto-compile)
+  (auto-compile-on-load-mode)
+  (auto-compile-on-save-mode)
+  (setq exec-path (append exec-path '("/home/el/scala/bin"))))
 ;; **** Custom Vars- Theme and stuff ***********
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -104,127 +104,125 @@
 (global-set-key (kbd "s-b") 'helm-bookmarks)
 ;;***************************************** End Bookmarks *****************************************
 ;; ;************************* Speedbar Related customization ******************
-(require 'sr-speedbar)
-(global-set-key (kbd "C-0") 'sr-speedbar-toggle)
-(global-set-key (kbd "C-9") 'sr-speedbar-select-window)
+(progn
+  (require 'sr-speedbar)
+  (global-set-key (kbd "C-0") 'sr-speedbar-toggle)
+  (global-set-key (kbd "C-9") 'sr-speedbar-select-window))
 ;;****************************** Move lines up and down **********************
 
 ;;********************* Shortcuts *******************************************
-(require 'fiplr)
-(setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules"))
-                            (files ("*.jpg" "*.png" "*.zip" "*~"))))
-(global-set-key (kbd "C-.") 'rgrep)
-(global-set-key (kbd "s-j") 'helm-semantic-or-imenu)
-(global-set-key (kbd "C-;") 'ido-kill-buffer)
-(global-set-key (kbd "C-p") 'fiplr-find-file)
-(global-set-key (kbd "M-p") 'helm-ls-git-ls)
-(global-set-key (kbd "C-,") 'compile)
-(global-set-key (kbd "C-Q") 'goto-line)
-(global-set-key (kbd "C-x m") 'man)
-(global-set-key (kbd "C-x r") 'rename-buffer)
-(global-set-key (kbd "M-s") 'magit-status)
-(global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "M-f") 'ido-find-file)
-(global-set-key (kbd "M-<up>") 'move-text-up)
-(global-set-key (kbd "M-<down>") 'move-text-down)
+(progn
+  (require 'fiplr)
+  (setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules"))
+			      (files ("*.jpg" "*.png" "*.zip" "*~"))))
+  (global-set-key (kbd "C-.") 'rgrep)
+  (global-set-key (kbd "s-j") 'helm-semantic-or-imenu)
+  (global-set-key (kbd "C-;") 'ido-kill-buffer)
+  (global-set-key (kbd "C-p") 'fiplr-find-file)
+  (global-set-key (kbd "C-,") 'compile)
+  (global-set-key (kbd "M-p") 'helm-ls-git-ls)
+  (global-set-key (kbd "C-Q") 'goto-line)
+  (global-set-key (kbd "C-x m") 'man)
+  (global-set-key (kbd "C-x r") 'rename-buffer)
+  (global-set-key (kbd "M-s") 'magit-status)
+  (global-set-key (kbd "M-o") 'other-window)
+  (global-set-key (kbd "M-f") 'ido-find-file)  
+  (global-set-key (kbd "M-<up>") 'move-text-up)
+  (global-set-key (kbd "M-<down>") 'move-text-down)
 
-(global-set-key (kbd "M-b") 'ido-switch-buffer)
-(global-set-key (kbd "C-b") 'ido-switch-buffer-other-window)
-(require 'org)
-(global-set-key (kbd "C-t") 'org-iswitchb)
+  (global-set-key (kbd "M-b") 'ido-switch-buffer)
+  (global-set-key (kbd "C-b") 'ido-switch-buffer-other-window)
+  (require 'org)
+  (global-set-key (kbd "C-t") 'org-iswitchb)
+  (define-key global-map "\C-cl" 'org-store-link)
+  (define-key global-map "\C-ca" 'org-agenda)
+  (setq org-log-done t))
 
 ;;********************* End shortcuts *******************************************
 ;;********************* Org Mode  ********************************************
 
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
 
 ;;********************* Tabbar config  *******************************************
-(dolist (func '(tabbar-mode tabbar-forward-tab tabbar-forward-group tabbar-backward-tab tabbar-backward-group))
-  (autoload func "tabbar" "Tabs at the top of buffers and easy control-tab navigation"))
-(defmacro defun-prefix-alt (name on-no-prefix on-prefix &optional do-always)
-  `(defun ,name (arg)
-     (interactive "P")
-     ,do-always
-     (if (equal nil arg)
-	 ,on-no-prefix
-       ,on-prefix)))
-(defun-prefix-alt shk-tabbar-next (tabbar-forward-tab) (tabbar-forward-group) (tabbar-mode 1))
-(defun-prefix-alt shk-tabbar-prev (tabbar-backward-tab) (tabbar-backward-group) (tabbar-mode 1))
-(global-set-key [(control tab)] 'shk-tabbar-next)
-(global-set-key [(control shift tab)] 'shk-tabbar-prev)
+;; (progn 
+;; (dolist (func '(tabbar-mode tabbar-forward-tab tabbar-forward-group tabbar-backward-tab tabbar-backward-group))
+;;   (autoload func "tabbar" "Tabs at the top of buffers and easy control-tab navigation"))
+;; (defmacro defun-prefix-alt (name on-no-prefix on-prefix &optional do-always)
+;;   `(defun ,name (arg)
+;;      (interactive "P")
+;;      ,do-always
+;;      (if (equal nil arg)
+;; 	 ,on-no-prefix
+;;        ,on-prefix)))
+;; (defun-prefix-alt shk-tabbar-next (tabbar-forward-tab) (tabbar-forward-group) (tabbar-mode 1))
+;; (defun-prefix-alt shk-tabbar-prev (tabbar-backward-tab) (tabbar-backward-group) (tabbar-mode 1))
+;; (global-set-key [(control tab)] 'shk-tabbar-next)
+;; (global-set-key [(control shift tab)] 'shk-tabbar-prev))
 ;;********************* End Tabbar config  *******************************************
 ;;********************* Multiple Cursors *****************************************
-(require 'multiple-cursors)
-
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-;******************** End Multiple Cursors ************************************
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-;; ;****************************** AC and YASnippet ***************
-(require 'auto-complete)
-; do default config for auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
-;; start yasnippet with emacs
-
 (progn
-  (require 'yasnippet)
-  (yas-global-mode 1))
+  (require 'multiple-cursors)
+
+  (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+;******************** End Multiple Cursors ************************************
+;; ;****************************** AC and YASnippet ***************
+(progn
+  (require 'auto-complete)
+					; do default config for auto-complete
+  (require 'auto-complete-config)
+  (ac-config-default)
+  ;; start yasnippet with emacs
+
+  (progn
+    (require 'yasnippet)
+    (yas-global-mode 1)))
 
 ;; ;************************* Web Mode ***********************************
-(require 'web-mode)
-(require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'ac-sources 'ac-source-html-tag)
-(add-to-list 'ac-sources 'ac-source-html-attribute)
-(add-to-list 'web-mode-ac-sources-alist
-             '(("css" . (ac-source-css-property))
-	       ("html" . (ac-source-html-tag
-			  ac-source-words-in-buffer
-			  ac-source-abbrev
-			  ac-source-html-attribute))))
-(add-to-list 'auto-mode-alist '("\\.html*\\'" . web-mode))
-;; adjust indents for web-mode to 2 spaces
-(defun my-web-mode-hook ()
-  "Hooks for Web mode. Adjust indents"
+(progn
+  (require 'web-mode)
+  (require 'js2-mode)
+  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+  (add-to-list 'ac-sources 'ac-source-html-tag)
+  (add-to-list 'ac-sources 'ac-source-html-attribute)
+  (add-to-list 'web-mode-ac-sources-alist
+	       '(("css" . (ac-source-css-property))
+		 ("html" . (ac-source-html-tag
+			    ac-source-words-in-buffer
+			    ac-source-abbrev
+			    ac-source-html-attribute))))
+  (add-to-list 'auto-mode-alist '("\\.html*\\'" . web-mode))
+  ;; adjust indents for web-mode to 2 spaces
+  (defun my-web-mode-hook ()
+    "Hooks for Web mode. Adjust indents"
   ;;; http://web-mode.org/
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2))
-(add-hook 'web-mode-hook  'my-web-mode-hook)
-(setq standard-indent 2)
-;; ;;*********** JS2 and tern *****************************
-(eval-after-load 'tern
-   '(progn
-      (require 'tern-auto-complete)
-      (tern-ac-setup)))
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-(add-hook 'js2-mode-hook 'tern-mode)
-(add-hook 'js2-mode-hook 'ac-js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(if (eq system-type 'windows-nt)
-    (setq tern-command '("node" "C:\\Users\\El\\AppData\\Roaming\\npm\\node_modules\\tern\\bin\\tern")))
-(setq js-indent-level 2)
-(setq js2-basic-offset 2)
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-code-indent-offset 2))
+  (add-hook 'web-mode-hook  'my-web-mode-hook)
+  (setq standard-indent 2)
+  ;; ;;*********** JS2 and tern *****************************
+  (eval-after-load 'tern
+    '(progn
+       (require 'tern-auto-complete)
+       (tern-ac-setup)))
+  (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+  (add-hook 'js2-mode-hook 'tern-mode)
+  (add-hook 'js2-mode-hook 'ac-js2-mode)
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+  (if (eq system-type 'windows-nt)
+      (setq tern-command '("node" "C:\\Users\\El\\AppData\\Roaming\\npm\\node_modules\\tern\\bin\\tern")))
+  (setq js-indent-level 2)
+  (setq js2-basic-offset 2))
 ;; ***************************** Flycheck stuff for js *****************************
 ;; http://www.flycheck.org/manual/latest/index.html
 (progn
@@ -251,9 +249,10 @@
 )
 
 ;; ***************************** Racket MOde stuff *****************************
-(require 'racket-mode)
-(add-to-list 'auto-mode-alist '("\\.rkt\\'" . racket-mode))
-(add-hook 'racket-mode-hook 'auto-complete-mode)
+(progn
+  (require 'racket-mode)
+  (add-to-list 'auto-mode-alist '("\\.rkt\\'" . racket-mode))
+  (add-hook 'racket-mode-hook 'auto-complete-mode))
 ;; ;******************** Config ggtags for C++  ***********************************
 ;; C++ stuff from https://github.com/tuhdo/emacs-c-ide-demo/blob/master/init.el
 
@@ -266,31 +265,21 @@
 ;;  helm-gtags-prefix-key "\C-cg"
 ;;  helm-gtags-suggested-key-mapping t
 ;;  )
-(require 'helm-gtags)
-;; ;; Enable helm-gtags-mode
-;; (add-hook 'dired-mode-hook 'helm-gtags-mode)
-;; (add-hook 'eshell-mode-hook 'helm-gtags-mode)
-(add-hook 'c-mode-hook 'helm-gtags-mode)
-(add-hook 'c++-mode-hook 'helm-gtags-mode)
-;; (add-hook 'asm-mode-hook 'helm-gtags-mode)
-
-;; (define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
-;; (define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
-(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
-(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
-;; (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-;; (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
 (progn
-  ;; (add-to-list 'load-path "~/.emacs.d/custom")
-  ;; (require 'setup-helm)
-  ;; (require 'setup-helm-gtags)
-  ;; (require 'setup-ggtags)
-  ;; (require 'setup-cedet)
-  ;; (require 'setup-editing)
+  (require 'helm-gtags)
+  ;; ;; Enable helm-gtags-mode
+  ;; (add-hook 'dired-mode-hook 'helm-gtags-mode)
+  ;; (add-hook 'eshell-mode-hook 'helm-gtags-mode)
+  (add-hook 'c-mode-hook 'helm-gtags-mode)
+  (add-hook 'c++-mode-hook 'helm-gtags-mode)
+  ;; (add-hook 'asm-mode-hook 'helm-gtags-mode)
 
-  ;; (windmove-default-keybindings)
-
-  ;; function-args
+  ;; (define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+  ;; (define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
+  (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
+  (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+  ;; (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+  ;; (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
   (progn
     (require 'function-args)
     (fa-config-default)
@@ -367,11 +356,12 @@
 ;; ;******************** End ggtags ************************************
 ;; ******************* Python suff ***********************************
 ;; Python mode settings
-(require 'python-mode)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
-(setq py-electric-colon-active t)
+(progn
+  (require 'python-mode)
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (setq jedi:complete-on-dot t)
+  (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
+  (setq py-electric-colon-active t))
 ;; (add-hook 'python-mode-hook 'autopair-mode)(add-hook 'python-mode-hook 'auto-complete-mode)
 ;; ******************* End Python suff ***********************************
 ;; *********************************** Ruby ***********************************
@@ -382,7 +372,6 @@
   (add-hook 'ruby-mode-hook 'ri-bind-key)
   )
 ;; *********************************** End Ruby stuff ***********************************
-(put 'scroll-left 'disabled nil)
 ;; *********************************** Haskell stuff ***********************************
 ;; Standard libraries needed
 (require 'cl-lib)
@@ -421,9 +410,9 @@
 
 ;; Use opam switch to lookup ocamlmerlin binary
 (setq merlin-command 'opam))
+
 ;;********************************** End OCaml stuff **********************************
 ;; ********************************** Java stuff **********************************
-(load "~/.emacs.d/java-mode-autoloads.el")
 (put 'upcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 
@@ -440,5 +429,6 @@
   (define-key scala-mode-map (kbd "M-=") 'ensime-type-at-point)
   (define-key scala-mode-map (kbd "M-RET") 'ensime-import-type-at-point)
   (define-key scala-mode-map (kbd "C-=") 'ensime-print-errors-at-point))
-(require 'bm)
 
+(require 'bm)
+(put 'scroll-left 'disabled nil)
