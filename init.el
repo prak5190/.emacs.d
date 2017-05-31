@@ -13,7 +13,7 @@
   (setq package-list '(flx-ido tern js2-mode sr-speedbar tabbar fiplr magit multiple-cursors helm tern multiple-cursors
 			       yasnippet auto-complete helm-gtags markdown-mode web-mode move-text web-beautify jedi python-mode transpose-frame vlf auto-compile
 			       ;; Taken from https://github.com/tuhdo/emacs-c-ide-demo/blob/master/init.el
-			       anzu duplicate-thing ggtags helm-gtags helm-projectile helm-swoop
+			       anzu duplicate-thing ggtags helm-gtags helm-projectile helm-swoop php-mode
 			       clean-aindent-mode comment-dwim-2 dtrt-indent ws-butler iedit yasnippet smartparens projectile volatile-highlights undo-tree zygospore
 			       ;; END
 			       ac-js2 tern-auto-complete yaml-mode racket-mode quack geiser let-alist haskell-mode shm hindent))
@@ -28,7 +28,7 @@
 
   ;;activate all the packages (in particular autoloads)
   (package-initialize)
-  ;; fetch the list of packages available 
+  ;; fetch the list of packages available
   (unless package-archive-contents
     (package-refresh-contents))
 
@@ -63,9 +63,11 @@
    (quote
     ("0a072360db47f066a246d7254d126a347abb80707ab3f181fe97b4729bb318e9" default)))
  '(ecb-options-version "2.40")
+ '(ensime-auto-connect (quote ask))
  '(frame-brackground-mode (quote dark))
  '(global-semantic-idle-scheduler-mode nil)
  '(org-agenda-files (quote ("~/e/crest" "~/Dropbox/org" "~/e/apps" "~/e/code")))
+ '(org-startup-folded (quote showeverything))
  '(org-support-shift-select t)
  '(semantic-imenu-auto-rebuild-directory-indexes t)
  '(semantic-imenu-bucketize-file t)
@@ -83,19 +85,24 @@
  '(web-mode-script-padding 2))
 (require 'vlf-setup)
 ;; ;********************** Flx IDO stuff ********************8
-(require 'flx-ido)
-(ido-mode 1)
-(ido-everywhere 1)
-;(flx-ido-mode 1)
-;; disable ido faces to see flx highlights.
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
-(setq gc-cons-threshold 20000000)
+(progn
+  (require 'flx-ido)
+  (ido-mode 1)
+  (ido-everywhere 1)
+					;(flx-ido-mode 1)
+  ;; disable ido faces to see flx highlights.
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-faces nil)
+  (setq gc-cons-threshold 20000000))
 ;;********************* Transpose frame  *****************************************
-(require 'transpose-frame)
-(global-set-key (kbd "s-r") 'rotate-frame-clockwise)
-(global-set-key (kbd "M-'") 'auto-complete)
+(progn
+  (require 'transpose-frame)
+  (global-set-key (kbd "s-r") 'rotate-frame-clockwise)
+  (global-set-key (kbd "M-'") 'auto-complete))
 ;;********************* End transpose frame *****************************************
+;;***************************************** Bookmarks *****************************************
+(global-set-key (kbd "s-b") 'helm-bookmarks)
+;;***************************************** End Bookmarks *****************************************
 ;; ;************************* Speedbar Related customization ******************
 (require 'sr-speedbar)
 (global-set-key (kbd "C-0") 'sr-speedbar-toggle)
@@ -110,13 +117,14 @@
 (global-set-key (kbd "s-j") 'helm-semantic-or-imenu)
 (global-set-key (kbd "C-;") 'ido-kill-buffer)
 (global-set-key (kbd "C-p") 'fiplr-find-file)
-(global-set-key (kbd "C-,") 'compile)	
-(global-set-key (kbd "C-Q") 'goto-line)	
+(global-set-key (kbd "M-p") 'helm-ls-git-ls)
+(global-set-key (kbd "C-,") 'compile)
+(global-set-key (kbd "C-Q") 'goto-line)
 (global-set-key (kbd "C-x m") 'man)
 (global-set-key (kbd "C-x r") 'rename-buffer)
 (global-set-key (kbd "M-s") 'magit-status)
 (global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "M-f") 'ido-find-file)  
+(global-set-key (kbd "M-f") 'ido-find-file)
 (global-set-key (kbd "M-<up>") 'move-text-up)
 (global-set-key (kbd "M-<down>") 'move-text-down)
 
@@ -352,8 +360,8 @@
   (helm-projectile-on)
   (setq projectile-completion-system 'helm)
   (setq projectile-indexing-method 'alien)
-  (global-set-key (kbd "M-p s") 'helm-projectile-switch-project)
-  (global-set-key (kbd "M-p b") 'helm-projectile-switch-to-buffer)
+  ;; (global-set-key (kbd "M-p s") 'helm-projectile-switch-project)
+  ;; (global-set-key (kbd "M-p b") 'helm-projectile-switch-to-buffer)
   ;; Package zygospore - For undoing delete other windows - This is awesome
   (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows))
 ;; ;******************** End ggtags ************************************
@@ -411,8 +419,8 @@
 ;; Or enable it globally:
 ;; (add-hook 'after-init-hook 'global-company-mode)
 
-  ;; Use opam switch to lookup ocamlmerlin binary
-  (setq merlin-command 'opam))
+;; Use opam switch to lookup ocamlmerlin binary
+(setq merlin-command 'opam))
 ;;********************************** End OCaml stuff **********************************
 ;; ********************************** Java stuff **********************************
 (load "~/.emacs.d/java-mode-autoloads.el")
@@ -421,6 +429,16 @@
 
 
 ;; ********************************** Scala stuff **********************************
-;; (use-package ensime
-;;   :commands ensime ensime-mode)
-;; (add-hook 'scala-mode-hook 'ensime-mode)
+;; :commands ensime ensime-mode)
+(progn
+  (add-hook 'scala-mode-hook 'ensime-mode)
+  (add-to-list 'exec-path "/home/el/scala/sbt/bin/")
+  (add-to-list 'exec-path "/home/el/ensime/bin/")
+  (require 'ensime)
+  (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+  ;; Scala shortcuts
+  (define-key scala-mode-map (kbd "M-=") 'ensime-type-at-point)
+  (define-key scala-mode-map (kbd "M-RET") 'ensime-import-type-at-point)
+  (define-key scala-mode-map (kbd "C-=") 'ensime-print-errors-at-point))
+(require 'bm)
+
